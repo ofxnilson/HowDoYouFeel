@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "generated.grpc.motivationalmessages";
+option java_outer_classname = "MotivationalMessagesImpl";
+
+package HowDoYouFeel;
+
+    // Service definition for sending motivational messages to the user throughout the day
+service MotivationalMessages{
+        // Streams motivational messages throughout the day
+    rpc MotivationalMessages (MotivationRequest) returns (stream MotivationResponse); 
+        // Client stream: the user will enter multiple gratitude messages throughout the day 
+}
+
+    // Message for requesting motivational messages based on user ID
+message MotivationRequest{
+    string user_id = 1; // Uses the user ID to return the messages to the correct user
+}
+
+    // Message for streaming motivational messages
+message MotivationResponse{
+    string message = 1; // Returns the motivational texts to the user > add at least 24messages at first 
+}
+
+    // Users submit multiple gratitude journal entries
+message GratitudeEntryRequest {
+    string user_id = 1;  // The user submitting the gratitude entry
+    string gratitude_text = 2; // What the user is grateful for
+    string timestamp = 3; // Time when of the entry
+}
+
+// Confirms successful journaling session
+message GratitudeEntryResponse {
+    string message = 1; // Acknowledgment message ("Keep being grateful for the little things! \n Your gratitude has been saved! \n Thank you")
+}

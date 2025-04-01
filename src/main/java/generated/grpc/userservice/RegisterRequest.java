@@ -22,6 +22,8 @@ private static final long serialVersionUID = 0L;
   private RegisterRequest() {
     username_ = "";
     password_ = "";
+    dateOfBirth_ = "";
+    therapistName_ = "";
   }
 
   @java.lang.Override
@@ -58,6 +60,18 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             password_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            dateOfBirth_ = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            therapistName_ = s;
             break;
           }
           default: {
@@ -176,6 +190,74 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int DATE_OF_BIRTH_FIELD_NUMBER = 3;
+  private volatile java.lang.Object dateOfBirth_;
+  /**
+   * <code>string date_of_birth = 3;</code>
+   */
+  public java.lang.String getDateOfBirth() {
+    java.lang.Object ref = dateOfBirth_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      dateOfBirth_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string date_of_birth = 3;</code>
+   */
+  public com.google.protobuf.ByteString
+      getDateOfBirthBytes() {
+    java.lang.Object ref = dateOfBirth_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      dateOfBirth_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int THERAPIST_NAME_FIELD_NUMBER = 4;
+  private volatile java.lang.Object therapistName_;
+  /**
+   * <code>string therapist_name = 4;</code>
+   */
+  public java.lang.String getTherapistName() {
+    java.lang.Object ref = therapistName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      therapistName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string therapist_name = 4;</code>
+   */
+  public com.google.protobuf.ByteString
+      getTherapistNameBytes() {
+    java.lang.Object ref = therapistName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      therapistName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -196,6 +278,12 @@ private static final long serialVersionUID = 0L;
     if (!getPasswordBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, password_);
     }
+    if (!getDateOfBirthBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, dateOfBirth_);
+    }
+    if (!getTherapistNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, therapistName_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -210,6 +298,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getPasswordBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, password_);
+    }
+    if (!getDateOfBirthBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, dateOfBirth_);
+    }
+    if (!getTherapistNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, therapistName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -231,6 +325,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUsername());
     result = result && getPassword()
         .equals(other.getPassword());
+    result = result && getDateOfBirth()
+        .equals(other.getDateOfBirth());
+    result = result && getTherapistName()
+        .equals(other.getTherapistName());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -246,6 +344,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getUsername().hashCode();
     hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
     hash = (53 * hash) + getPassword().hashCode();
+    hash = (37 * hash) + DATE_OF_BIRTH_FIELD_NUMBER;
+    hash = (53 * hash) + getDateOfBirth().hashCode();
+    hash = (37 * hash) + THERAPIST_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getTherapistName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -387,6 +489,10 @@ private static final long serialVersionUID = 0L;
 
       password_ = "";
 
+      dateOfBirth_ = "";
+
+      therapistName_ = "";
+
       return this;
     }
 
@@ -415,6 +521,8 @@ private static final long serialVersionUID = 0L;
       generated.grpc.userservice.RegisterRequest result = new generated.grpc.userservice.RegisterRequest(this);
       result.username_ = username_;
       result.password_ = password_;
+      result.dateOfBirth_ = dateOfBirth_;
+      result.therapistName_ = therapistName_;
       onBuilt();
       return result;
     }
@@ -469,6 +577,14 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getPassword().isEmpty()) {
         password_ = other.password_;
+        onChanged();
+      }
+      if (!other.getDateOfBirth().isEmpty()) {
+        dateOfBirth_ = other.dateOfBirth_;
+        onChanged();
+      }
+      if (!other.getTherapistName().isEmpty()) {
+        therapistName_ = other.therapistName_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -674,6 +790,144 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       password_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object dateOfBirth_ = "";
+    /**
+     * <code>string date_of_birth = 3;</code>
+     */
+    public java.lang.String getDateOfBirth() {
+      java.lang.Object ref = dateOfBirth_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dateOfBirth_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string date_of_birth = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDateOfBirthBytes() {
+      java.lang.Object ref = dateOfBirth_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        dateOfBirth_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string date_of_birth = 3;</code>
+     */
+    public Builder setDateOfBirth(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      dateOfBirth_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string date_of_birth = 3;</code>
+     */
+    public Builder clearDateOfBirth() {
+      
+      dateOfBirth_ = getDefaultInstance().getDateOfBirth();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string date_of_birth = 3;</code>
+     */
+    public Builder setDateOfBirthBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      dateOfBirth_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object therapistName_ = "";
+    /**
+     * <code>string therapist_name = 4;</code>
+     */
+    public java.lang.String getTherapistName() {
+      java.lang.Object ref = therapistName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        therapistName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string therapist_name = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTherapistNameBytes() {
+      java.lang.Object ref = therapistName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        therapistName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string therapist_name = 4;</code>
+     */
+    public Builder setTherapistName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      therapistName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string therapist_name = 4;</code>
+     */
+    public Builder clearTherapistName() {
+      
+      therapistName_ = getDefaultInstance().getTherapistName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string therapist_name = 4;</code>
+     */
+    public Builder setTherapistNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      therapistName_ = value;
       onChanged();
       return this;
     }

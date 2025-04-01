@@ -42,4 +42,24 @@ public interface RegisterRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPasswordBytes();
+
+  /**
+   * <code>string date_of_birth = 3;</code>
+   */
+  java.lang.String getDateOfBirth();
+  /**
+   * <code>string date_of_birth = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getDateOfBirthBytes();
+
+  /**
+   * <code>string therapist_name = 4;</code>
+   */
+  java.lang.String getTherapistName();
+  /**
+   * <code>string therapist_name = 4;</code>
+   */
+  com.google.protobuf.ByteString
+      getTherapistNameBytes();
 }

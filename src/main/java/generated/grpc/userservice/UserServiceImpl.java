@@ -43,18 +43,19 @@ public final class UserServiceImpl {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017UserLogin.proto\022\014HowDoYouFeel\"5\n\017Regis" +
+      "\n\017UserLogin.proto\022\014HowDoYouFeel\"d\n\017Regis" +
       "terRequest\022\020\n\010username\030\001 \001(\t\022\020\n\010password" +
-      "\030\002 \001(\t\"4\n\020RegisterResponse\022\017\n\007user_id\030\001 " +
-      "\001(\t\022\017\n\007message\030\002 \001(\t\"2\n\014LoginRequest\022\020\n\010" +
-      "username\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"1\n\rLogi" +
-      "nResponse\022\017\n\007user_id\030\001 \001(\t\022\017\n\007message\030\002 " +
-      "\001(\t2\243\001\n\tUserLogin\022P\n\017RegisterNewUser\022\035.H" +
-      "owDoYouFeel.RegisterRequest\032\036.HowDoYouFe" +
-      "el.RegisterResponse\022D\n\tLoginUser\022\032.HowDo" +
-      "YouFeel.LoginRequest\032\033.HowDoYouFeel.Logi" +
-      "nResponseB/\n\032generated.grpc.userserviceB" +
-      "\017UserServiceImplP\001b\006proto3"
+      "\030\002 \001(\t\022\025\n\rdate_of_birth\030\003 \001(\t\022\026\n\016therapi" +
+      "st_name\030\004 \001(\t\"4\n\020RegisterResponse\022\017\n\007use" +
+      "r_id\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\"2\n\014LoginRequ" +
+      "est\022\020\n\010username\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"" +
+      "1\n\rLoginResponse\022\017\n\007user_id\030\001 \001(\t\022\017\n\007mes" +
+      "sage\030\002 \001(\t2\243\001\n\tUserLogin\022P\n\017RegisterNewU" +
+      "ser\022\035.HowDoYouFeel.RegisterRequest\032\036.How" +
+      "DoYouFeel.RegisterResponse\022D\n\tLoginUser\022" +
+      "\032.HowDoYouFeel.LoginRequest\032\033.HowDoYouFe" +
+      "el.LoginResponseB/\n\032generated.grpc.users" +
+      "erviceB\017UserServiceImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -73,7 +74,7 @@ public final class UserServiceImpl {
     internal_static_HowDoYouFeel_RegisterRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HowDoYouFeel_RegisterRequest_descriptor,
-        new java.lang.String[] { "Username", "Password", });
+        new java.lang.String[] { "Username", "Password", "DateOfBirth", "TherapistName", });
     internal_static_HowDoYouFeel_RegisterResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_HowDoYouFeel_RegisterResponse_fieldAccessorTable = new

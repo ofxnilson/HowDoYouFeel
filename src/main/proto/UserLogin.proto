@@ -8,9 +8,9 @@ package HowDoYouFeel;
 
     // Service to register new users
 service UserLogin{
-    //Register a new user with username and password > use the Regex to validate 
+        //Register a new user with username and password > use the Regex to validate 
     rpc RegisterNewUser(RegisterRequest) returns (RegisterResponse);
-    // Validate the username and password
+        // Validate the username and password
     rpc LoginUser(LoginRequest) returns (LoginResponse);
 }
 
@@ -18,6 +18,8 @@ service UserLogin{
 message RegisterRequest{
     string username = 1; // User enters the username
     string password = 2; // Password fo the new user
+    string date_of_birth = 3;  
+    string therapist_name = 4;
 }
 
     // Message for return the confirmation/failure of the user registration

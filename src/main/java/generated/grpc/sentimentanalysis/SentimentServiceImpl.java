@@ -63,29 +63,30 @@ public final class SentimentServiceImpl {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026SentimentService.proto\022\014HowDoYouFeel\"X" +
-      "\n\020SentimentRequest\022\017\n\007user_id\030\001 \001(\t\022\014\n\004t" +
-      "ext\030\002 \001(\t\022\023\n\013time_of_day\030\003 \001(\t\022\020\n\010activi" +
-      "ty\030\004 \001(\t\":\n\021SentimentResponse\022\021\n\tsentime" +
-      "nt\030\001 \001(\t\022\022\n\nconfidence\030\002 \001(\002\"(\n\025SaveSent" +
-      "imentResponse\022\017\n\007message\030\001 \001(\t\"&\n\023Weekly" +
-      "ReportRequest\022\017\n\007user_id\030\001 \001(\t\"E\n\024Weekly" +
-      "ReportResponse\022-\n\007entries\030\001 \003(\0132\034.HowDoY" +
-      "ouFeel.SentimentEntry\"F\n\016SentimentEntry\022" +
-      "\014\n\004date\030\001 \001(\t\022\023\n\013time_of_day\030\002 \001(\t\022\021\n\tse" +
-      "ntiment\030\003 \001(\t\"/\n\013ChatRequest\022\017\n\007user_id\030" +
-      "\001 \001(\t\022\017\n\007message\030\002 \001(\t\" \n\014ChatResponse\022\020" +
-      "\n\010response\030\001 \001(\t2\341\002\n\020SentimentService\022S\n" +
-      "\020AnalyseSentiment\022\036.HowDoYouFeel.Sentime" +
-      "ntRequest\032\037.HowDoYouFeel.SentimentRespon" +
-      "se\022T\n\rSaveSentiment\022\036.HowDoYouFeel.Senti" +
-      "mentRequest\032#.HowDoYouFeel.SaveSentiment" +
-      "Response\022X\n\017GetWeeklyReport\022!.HowDoYouFe" +
-      "el.WeeklyReportRequest\032\".HowDoYouFeel.We" +
-      "eklyReportResponse\022H\n\013ChatWithBot\022\031.HowD" +
-      "oYouFeel.ChatRequest\032\032.HowDoYouFeel.Chat" +
-      "Response(\0010\001B:\n generated.grpc.sentiment" +
-      "analysisB\024SentimentServiceImplP\001b\006proto3"
+      "\n\026SentimentService.proto\022\014HowDoYouFeel\032\037" +
+      "google/protobuf/timestamp.proto\"X\n\020Senti" +
+      "mentRequest\022\017\n\007user_id\030\001 \001(\t\022\014\n\004text\030\002 \001" +
+      "(\t\022\023\n\013time_of_day\030\003 \001(\t\022\020\n\010activity\030\004 \001(" +
+      "\t\":\n\021SentimentResponse\022\021\n\tsentiment\030\001 \001(" +
+      "\t\022\022\n\nconfidence\030\002 \001(\002\"(\n\025SaveSentimentRe" +
+      "sponse\022\017\n\007message\030\001 \001(\t\"&\n\023WeeklyReportR" +
+      "equest\022\017\n\007user_id\030\001 \001(\t\"E\n\024WeeklyReportR" +
+      "esponse\022-\n\007entries\030\001 \003(\0132\034.HowDoYouFeel." +
+      "SentimentEntry\"F\n\016SentimentEntry\022\014\n\004date" +
+      "\030\001 \001(\t\022\023\n\013time_of_day\030\002 \001(\t\022\021\n\tsentiment" +
+      "\030\003 \001(\t\"/\n\013ChatRequest\022\017\n\007user_id\030\001 \001(\t\022\017" +
+      "\n\007message\030\002 \001(\t\" \n\014ChatResponse\022\020\n\010respo" +
+      "nse\030\001 \001(\t2\341\002\n\020SentimentService\022S\n\020Analys" +
+      "eSentiment\022\036.HowDoYouFeel.SentimentReque" +
+      "st\032\037.HowDoYouFeel.SentimentResponse\022T\n\rS" +
+      "aveSentiment\022\036.HowDoYouFeel.SentimentReq" +
+      "uest\032#.HowDoYouFeel.SaveSentimentRespons" +
+      "e\022X\n\017GetWeeklyReport\022!.HowDoYouFeel.Week" +
+      "lyReportRequest\032\".HowDoYouFeel.WeeklyRep" +
+      "ortResponse\022H\n\013ChatWithBot\022\031.HowDoYouFee" +
+      "l.ChatRequest\032\032.HowDoYouFeel.ChatRespons" +
+      "e(\0010\001B:\n generated.grpc.sentimentanalysi" +
+      "sB\024SentimentServiceImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -98,6 +99,7 @@ public final class SentimentServiceImpl {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.TimestampProto.getDescriptor(),
         }, assigner);
     internal_static_HowDoYouFeel_SentimentRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -147,6 +149,7 @@ public final class SentimentServiceImpl {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HowDoYouFeel_ChatResponse_descriptor,
         new java.lang.String[] { "Response", });
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

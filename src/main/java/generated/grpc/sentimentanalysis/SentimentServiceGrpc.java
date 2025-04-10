@@ -17,7 +17,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
- * Service definition for analyzing user sentiment and provide chatb
+ * Service definition for analyzing user sentiment and provide chatbot
  * </pre>
  */
 @javax.annotation.Generated(
@@ -183,7 +183,7 @@ public final class SentimentServiceGrpc {
 
   /**
    * <pre>
-   * Service definition for analyzing user sentiment and provide chatb
+   * Service definition for analyzing user sentiment and provide chatbot
    * </pre>
    */
   public static abstract class SentimentServiceImplBase implements io.grpc.BindableService {
@@ -264,7 +264,7 @@ public final class SentimentServiceGrpc {
 
   /**
    * <pre>
-   * Service definition for analyzing user sentiment and provide chatb
+   * Service definition for analyzing user sentiment and provide chatbot
    * </pre>
    */
   public static final class SentimentServiceStub extends io.grpc.stub.AbstractStub<SentimentServiceStub> {
@@ -330,7 +330,7 @@ public final class SentimentServiceGrpc {
 
   /**
    * <pre>
-   * Service definition for analyzing user sentiment and provide chatb
+   * Service definition for analyzing user sentiment and provide chatbot
    * </pre>
    */
   public static final class SentimentServiceBlockingStub extends io.grpc.stub.AbstractStub<SentimentServiceBlockingStub> {
@@ -382,7 +382,7 @@ public final class SentimentServiceGrpc {
 
   /**
    * <pre>
-   * Service definition for analyzing user sentiment and provide chatb
+   * Service definition for analyzing user sentiment and provide chatbot
    * </pre>
    */
   public static final class SentimentServiceFutureStub extends io.grpc.stub.AbstractStub<SentimentServiceFutureStub> {

@@ -63,7 +63,7 @@ public interface SentimentRequestOrBuilder extends
 
   /**
    * <pre>
-   * Register the what the user was doing that changed his mood
+   * To get wat happened to the uer that changed his mood
    * </pre>
    *
    * <code>string activity = 4;</code>
@@ -71,7 +71,7 @@ public interface SentimentRequestOrBuilder extends
   java.lang.String getActivity();
   /**
    * <pre>
-   * Register the what the user was doing that changed his mood
+   * To get wat happened to the uer that changed his mood
    * </pre>
    *
    * <code>string activity = 4;</code>

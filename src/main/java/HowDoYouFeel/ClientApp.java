@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class ClientApp {
     public static void main(String[] args) {
-            // Create a channel to communicate with the server
+            // Channel to communicate with the server
         ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8080)
                 .usePlaintext()  // Disable SSL for simplicity
                 .build();

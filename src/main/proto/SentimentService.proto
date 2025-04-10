@@ -3,10 +3,11 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "generated.grpc.sentimentanalysis";
 option java_outer_classname = "SentimentServiceImpl";
+import "google/protobuf/timestamp.proto";
 
 package HowDoYouFeel;
 
-    // Service definition for analyzing user sentiment and provide chatb
+    // Service definition for analyzing user sentiment and provide chatbot
 service SentimentService{
         // Analyzes the sentiment on the typed text
     rpc AnalyseSentiment (SentimentRequest) returns (SentimentResponse);
@@ -23,7 +24,7 @@ message SentimentRequest{
     string user_id = 1; // Associate the sentiment to an user ID
     string text = 2; // The text input from the user
     string time_of_day = 3; // The time of day when the sentiment was recorded (Morning, Afternoon, Night)
-    string activity = 4; // Register the what the user was doing that changed his mood
+    string activity = 4; // To get wat happened to the uer that changed his mood
 }
 
     // Message for returning sentiment analysis results

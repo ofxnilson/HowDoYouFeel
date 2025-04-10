@@ -5,7 +5,7 @@ import io.grpc.ServerBuilder;
 /*
  * @author Nilson Francisco
  */
-public class ServerApp {
+public class ServerApp{
     public static void main(String[] args) throws Exception {
         Server server = ServerBuilder.forPort(8080)
                 .addService(new UserServiceImpl())

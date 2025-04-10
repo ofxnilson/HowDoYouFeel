@@ -236,7 +236,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object activity_;
   /**
    * <pre>
-   * Register the what the user was doing that changed his mood
+   * To get wat happened to the uer that changed his mood
    * </pre>
    *
    * <code>string activity = 4;</code>
@@ -255,7 +255,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Register the what the user was doing that changed his mood
+   * To get wat happened to the uer that changed his mood
    * </pre>
    *
    * <code>string activity = 4;</code>
@@ -902,7 +902,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object activity_ = "";
     /**
      * <pre>
-     * Register the what the user was doing that changed his mood
+     * To get wat happened to the uer that changed his mood
      * </pre>
      *
      * <code>string activity = 4;</code>
@@ -921,7 +921,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Register the what the user was doing that changed his mood
+     * To get wat happened to the uer that changed his mood
      * </pre>
      *
      * <code>string activity = 4;</code>
@@ -941,7 +941,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Register the what the user was doing that changed his mood
+     * To get wat happened to the uer that changed his mood
      * </pre>
      *
      * <code>string activity = 4;</code>
@@ -958,7 +958,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Register the what the user was doing that changed his mood
+     * To get wat happened to the uer that changed his mood
      * </pre>
      *
      * <code>string activity = 4;</code>
@@ -971,7 +971,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Register the what the user was doing that changed his mood
+     * To get wat happened to the uer that changed his mood
      * </pre>
      *
      * <code>string activity = 4;</code>

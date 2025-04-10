@@ -9,6 +9,7 @@ import generated.grpc.userservice.UserLoginGrpc;
 /*
  * @author Nilson Francisco
  */
+
 public class UserServiceImpl extends UserLoginGrpc.UserLoginImplBase {
     @Override
                 // Register new user

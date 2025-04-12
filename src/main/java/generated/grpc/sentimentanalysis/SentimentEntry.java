@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     date_ = "";
     timeOfDay_ = "";
     sentiment_ = "";
+    activity_ = "";
   }
 
   @java.lang.Override
@@ -65,6 +66,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             sentiment_ = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            activity_ = s;
             break;
           }
           default: {
@@ -225,6 +232,48 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ACTIVITY_FIELD_NUMBER = 4;
+  private volatile java.lang.Object activity_;
+  /**
+   * <pre>
+   * // To get wat happened to the user that changed his mood
+   * </pre>
+   *
+   * <code>string activity = 4;</code>
+   */
+  public java.lang.String getActivity() {
+    java.lang.Object ref = activity_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      activity_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * // To get wat happened to the user that changed his mood
+   * </pre>
+   *
+   * <code>string activity = 4;</code>
+   */
+  public com.google.protobuf.ByteString
+      getActivityBytes() {
+    java.lang.Object ref = activity_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      activity_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -248,6 +297,9 @@ private static final long serialVersionUID = 0L;
     if (!getSentimentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sentiment_);
     }
+    if (!getActivityBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, activity_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -265,6 +317,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getSentimentBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sentiment_);
+    }
+    if (!getActivityBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, activity_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -288,6 +343,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTimeOfDay());
     result = result && getSentiment()
         .equals(other.getSentiment());
+    result = result && getActivity()
+        .equals(other.getActivity());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -305,6 +362,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTimeOfDay().hashCode();
     hash = (37 * hash) + SENTIMENT_FIELD_NUMBER;
     hash = (53 * hash) + getSentiment().hashCode();
+    hash = (37 * hash) + ACTIVITY_FIELD_NUMBER;
+    hash = (53 * hash) + getActivity().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -448,6 +507,8 @@ private static final long serialVersionUID = 0L;
 
       sentiment_ = "";
 
+      activity_ = "";
+
       return this;
     }
 
@@ -477,6 +538,7 @@ private static final long serialVersionUID = 0L;
       result.date_ = date_;
       result.timeOfDay_ = timeOfDay_;
       result.sentiment_ = sentiment_;
+      result.activity_ = activity_;
       onBuilt();
       return result;
     }
@@ -535,6 +597,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getSentiment().isEmpty()) {
         sentiment_ = other.sentiment_;
+        onChanged();
+      }
+      if (!other.getActivity().isEmpty()) {
+        activity_ = other.activity_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -829,6 +895,95 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       sentiment_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object activity_ = "";
+    /**
+     * <pre>
+     * // To get wat happened to the user that changed his mood
+     * </pre>
+     *
+     * <code>string activity = 4;</code>
+     */
+    public java.lang.String getActivity() {
+      java.lang.Object ref = activity_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        activity_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * // To get wat happened to the user that changed his mood
+     * </pre>
+     *
+     * <code>string activity = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getActivityBytes() {
+      java.lang.Object ref = activity_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        activity_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * // To get wat happened to the user that changed his mood
+     * </pre>
+     *
+     * <code>string activity = 4;</code>
+     */
+    public Builder setActivity(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      activity_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * // To get wat happened to the user that changed his mood
+     * </pre>
+     *
+     * <code>string activity = 4;</code>
+     */
+    public Builder clearActivity() {
+      
+      activity_ = getDefaultInstance().getActivity();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * // To get wat happened to the user that changed his mood
+     * </pre>
+     *
+     * <code>string activity = 4;</code>
+     */
+    public Builder setActivityBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      activity_ = value;
       onChanged();
       return this;
     }

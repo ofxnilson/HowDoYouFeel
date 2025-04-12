@@ -60,4 +60,22 @@ public interface SentimentEntryOrBuilder extends
    */
   com.google.protobuf.ByteString
       getSentimentBytes();
+
+  /**
+   * <pre>
+   * // To get wat happened to the user that changed his mood
+   * </pre>
+   *
+   * <code>string activity = 4;</code>
+   */
+  java.lang.String getActivity();
+  /**
+   * <pre>
+   * // To get wat happened to the user that changed his mood
+   * </pre>
+   *
+   * <code>string activity = 4;</code>
+   */
+  com.google.protobuf.ByteString
+      getActivityBytes();
 }

@@ -49,11 +49,14 @@ public final class MotivationalMessagesImpl {
       "S\n\025GratitudeEntryRequest\022\017\n\007user_id\030\001 \001(" +
       "\t\022\026\n\016gratitude_text\030\002 \001(\t\022\021\n\ttimestamp\030\003" +
       " \001(\t\")\n\026GratitudeEntryResponse\022\017\n\007messag" +
-      "e\030\001 \001(\t2s\n\024MotivationalMessages\022[\n\024Motiv" +
-      "ationalMessages\022\037.HowDoYouFeel.Motivatio" +
-      "nRequest\032 .HowDoYouFeel.MotivationRespon" +
-      "se0\001BA\n#generated.grpc.motivationalmessa" +
-      "gesB\030MotivationalMessagesImplP\001b\006proto3"
+      "e\030\001 \001(\t2\333\001\n\024MotivationalMessages\022[\n\024Moti" +
+      "vationalMessages\022\037.HowDoYouFeel.Motivati" +
+      "onRequest\032 .HowDoYouFeel.MotivationRespo" +
+      "nse0\001\022f\n\027ReceiveGratitudeJournal\022#.HowDo" +
+      "YouFeel.GratitudeEntryRequest\032$.HowDoYou" +
+      "Feel.GratitudeEntryResponse(\001BA\n#generat" +
+      "ed.grpc.motivationalmessagesB\030Motivation" +
+      "alMessagesImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

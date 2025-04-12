@@ -53,6 +53,7 @@ message SentimentEntry{
     string date = 1; // The date when the sentiment was recorded
     string time_of_day = 2; // The time of day when the sentiment was recorded (Morning, Afternoon, Night)
     string sentiment = 3; // The detected sentiment (positive, negative or neutral)
+    string activity = 4; // // To get wat happened to the user that changed his mood
 }
 
     // Message for sending user input to the chatbot

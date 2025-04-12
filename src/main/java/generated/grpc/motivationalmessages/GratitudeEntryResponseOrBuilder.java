@@ -9,7 +9,7 @@ public interface GratitudeEntryResponseOrBuilder extends
 
   /**
    * <pre>
-   * Acknowledgment message ("Keep being grateful for the little things! &#92;n Your gratitude has been saved! &#92;n Thank you")
+   * Acknowledgment message ("Keep being grateful for the little things! &#92;n Your gratitude has been saved! &#92;n Thank you!")
    * </pre>
    *
    * <code>string message = 1;</code>
@@ -17,7 +17,7 @@ public interface GratitudeEntryResponseOrBuilder extends
   java.lang.String getMessage();
   /**
    * <pre>
-   * Acknowledgment message ("Keep being grateful for the little things! &#92;n Your gratitude has been saved! &#92;n Thank you")
+   * Acknowledgment message ("Keep being grateful for the little things! &#92;n Your gratitude has been saved! &#92;n Thank you!")
    * </pre>
    *
    * <code>string message = 1;</code>

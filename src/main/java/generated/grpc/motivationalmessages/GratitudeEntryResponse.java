@@ -89,7 +89,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object message_;
   /**
    * <pre>
-   * Acknowledgment message ("Keep being grateful for the little things! &#92;n Your gratitude has been saved! &#92;n Thank you")
+   * Acknowledgment message ("Keep being grateful for the little things! &#92;n Your gratitude has been saved! &#92;n Thank you!")
    * </pre>
    *
    * <code>string message = 1;</code>
@@ -108,7 +108,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Acknowledgment message ("Keep being grateful for the little things! &#92;n Your gratitude has been saved! &#92;n Thank you")
+   * Acknowledgment message ("Keep being grateful for the little things! &#92;n Your gratitude has been saved! &#92;n Thank you!")
    * </pre>
    *
    * <code>string message = 1;</code>
@@ -437,7 +437,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object message_ = "";
     /**
      * <pre>
-     * Acknowledgment message ("Keep being grateful for the little things! &#92;n Your gratitude has been saved! &#92;n Thank you")
+     * Acknowledgment message ("Keep being grateful for the little things! &#92;n Your gratitude has been saved! &#92;n Thank you!")
      * </pre>
      *
      * <code>string message = 1;</code>
@@ -456,7 +456,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Acknowledgment message ("Keep being grateful for the little things! &#92;n Your gratitude has been saved! &#92;n Thank you")
+     * Acknowledgment message ("Keep being grateful for the little things! &#92;n Your gratitude has been saved! &#92;n Thank you!")
      * </pre>
      *
      * <code>string message = 1;</code>
@@ -476,7 +476,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Acknowledgment message ("Keep being grateful for the little things! &#92;n Your gratitude has been saved! &#92;n Thank you")
+     * Acknowledgment message ("Keep being grateful for the little things! &#92;n Your gratitude has been saved! &#92;n Thank you!")
      * </pre>
      *
      * <code>string message = 1;</code>
@@ -493,7 +493,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Acknowledgment message ("Keep being grateful for the little things! &#92;n Your gratitude has been saved! &#92;n Thank you")
+     * Acknowledgment message ("Keep being grateful for the little things! &#92;n Your gratitude has been saved! &#92;n Thank you!")
      * </pre>
      *
      * <code>string message = 1;</code>
@@ -506,7 +506,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Acknowledgment message ("Keep being grateful for the little things! &#92;n Your gratitude has been saved! &#92;n Thank you")
+     * Acknowledgment message ("Keep being grateful for the little things! &#92;n Your gratitude has been saved! &#92;n Thank you!")
      * </pre>
      *
      * <code>string message = 1;</code>

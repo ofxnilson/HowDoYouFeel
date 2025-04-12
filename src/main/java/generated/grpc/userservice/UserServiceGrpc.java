@@ -17,17 +17,17 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
- * Service to register new users
+ * Service to register new users and login
  * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.15.0)",
-    comments = "Source: UserLogin.proto")
-public final class UserLoginGrpc {
+    comments = "Source: UserService.proto")
+public final class UserServiceGrpc {
 
-  private UserLoginGrpc() {}
+  private UserServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "HowDoYouFeel.UserLogin";
+  public static final String SERVICE_NAME = "HowDoYouFeel.UserService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<generated.grpc.userservice.RegisterRequest,
@@ -41,20 +41,20 @@ public final class UserLoginGrpc {
   public static io.grpc.MethodDescriptor<generated.grpc.userservice.RegisterRequest,
       generated.grpc.userservice.RegisterResponse> getRegisterNewUserMethod() {
     io.grpc.MethodDescriptor<generated.grpc.userservice.RegisterRequest, generated.grpc.userservice.RegisterResponse> getRegisterNewUserMethod;
-    if ((getRegisterNewUserMethod = UserLoginGrpc.getRegisterNewUserMethod) == null) {
-      synchronized (UserLoginGrpc.class) {
-        if ((getRegisterNewUserMethod = UserLoginGrpc.getRegisterNewUserMethod) == null) {
-          UserLoginGrpc.getRegisterNewUserMethod = getRegisterNewUserMethod = 
+    if ((getRegisterNewUserMethod = UserServiceGrpc.getRegisterNewUserMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getRegisterNewUserMethod = UserServiceGrpc.getRegisterNewUserMethod) == null) {
+          UserServiceGrpc.getRegisterNewUserMethod = getRegisterNewUserMethod = 
               io.grpc.MethodDescriptor.<generated.grpc.userservice.RegisterRequest, generated.grpc.userservice.RegisterResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "HowDoYouFeel.UserLogin", "RegisterNewUser"))
+                  "HowDoYouFeel.UserService", "RegisterNewUser"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   generated.grpc.userservice.RegisterRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   generated.grpc.userservice.RegisterResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new UserLoginMethodDescriptorSupplier("RegisterNewUser"))
+                  .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("RegisterNewUser"))
                   .build();
           }
         }
@@ -73,20 +73,20 @@ public final class UserLoginGrpc {
   public static io.grpc.MethodDescriptor<generated.grpc.userservice.LoginRequest,
       generated.grpc.userservice.LoginResponse> getLoginUserMethod() {
     io.grpc.MethodDescriptor<generated.grpc.userservice.LoginRequest, generated.grpc.userservice.LoginResponse> getLoginUserMethod;
-    if ((getLoginUserMethod = UserLoginGrpc.getLoginUserMethod) == null) {
-      synchronized (UserLoginGrpc.class) {
-        if ((getLoginUserMethod = UserLoginGrpc.getLoginUserMethod) == null) {
-          UserLoginGrpc.getLoginUserMethod = getLoginUserMethod = 
+    if ((getLoginUserMethod = UserServiceGrpc.getLoginUserMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getLoginUserMethod = UserServiceGrpc.getLoginUserMethod) == null) {
+          UserServiceGrpc.getLoginUserMethod = getLoginUserMethod = 
               io.grpc.MethodDescriptor.<generated.grpc.userservice.LoginRequest, generated.grpc.userservice.LoginResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "HowDoYouFeel.UserLogin", "LoginUser"))
+                  "HowDoYouFeel.UserService", "LoginUser"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   generated.grpc.userservice.LoginRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   generated.grpc.userservice.LoginResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new UserLoginMethodDescriptorSupplier("LoginUser"))
+                  .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("LoginUser"))
                   .build();
           }
         }
@@ -97,36 +97,36 @@ public final class UserLoginGrpc {
   /**
    * Creates a new async stub that supports all call types for the service
    */
-  public static UserLoginStub newStub(io.grpc.Channel channel) {
-    return new UserLoginStub(channel);
+  public static UserServiceStub newStub(io.grpc.Channel channel) {
+    return new UserServiceStub(channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static UserLoginBlockingStub newBlockingStub(
+  public static UserServiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new UserLoginBlockingStub(channel);
+    return new UserServiceBlockingStub(channel);
   }
 
   /**
    * Creates a new ListenableFuture-style stub that supports unary calls on the service
    */
-  public static UserLoginFutureStub newFutureStub(
+  public static UserServiceFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new UserLoginFutureStub(channel);
+    return new UserServiceFutureStub(channel);
   }
 
   /**
    * <pre>
-   * Service to register new users
+   * Service to register new users and login
    * </pre>
    */
-  public static abstract class UserLoginImplBase implements io.grpc.BindableService {
+  public static abstract class UserServiceImplBase implements io.grpc.BindableService {
 
     /**
      * <pre>
-     *Register a new user with username and password &gt; use the Regex to validate 
+     *Register user with username and password &gt; use the Regex to validate||password 8 digits 
      * </pre>
      */
     public void registerNewUser(generated.grpc.userservice.RegisterRequest request,
@@ -136,7 +136,7 @@ public final class UserLoginGrpc {
 
     /**
      * <pre>
-     * Validate the username and password
+     * Login
      * </pre>
      */
     public void loginUser(generated.grpc.userservice.LoginRequest request,
@@ -166,28 +166,28 @@ public final class UserLoginGrpc {
 
   /**
    * <pre>
-   * Service to register new users
+   * Service to register new users and login
    * </pre>
    */
-  public static final class UserLoginStub extends io.grpc.stub.AbstractStub<UserLoginStub> {
-    private UserLoginStub(io.grpc.Channel channel) {
+  public static final class UserServiceStub extends io.grpc.stub.AbstractStub<UserServiceStub> {
+    private UserServiceStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private UserLoginStub(io.grpc.Channel channel,
+    private UserServiceStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected UserLoginStub build(io.grpc.Channel channel,
+    protected UserServiceStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new UserLoginStub(channel, callOptions);
+      return new UserServiceStub(channel, callOptions);
     }
 
     /**
      * <pre>
-     *Register a new user with username and password &gt; use the Regex to validate 
+     *Register user with username and password &gt; use the Regex to validate||password 8 digits 
      * </pre>
      */
     public void registerNewUser(generated.grpc.userservice.RegisterRequest request,
@@ -198,7 +198,7 @@ public final class UserLoginGrpc {
 
     /**
      * <pre>
-     * Validate the username and password
+     * Login
      * </pre>
      */
     public void loginUser(generated.grpc.userservice.LoginRequest request,
@@ -210,28 +210,28 @@ public final class UserLoginGrpc {
 
   /**
    * <pre>
-   * Service to register new users
+   * Service to register new users and login
    * </pre>
    */
-  public static final class UserLoginBlockingStub extends io.grpc.stub.AbstractStub<UserLoginBlockingStub> {
-    private UserLoginBlockingStub(io.grpc.Channel channel) {
+  public static final class UserServiceBlockingStub extends io.grpc.stub.AbstractStub<UserServiceBlockingStub> {
+    private UserServiceBlockingStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private UserLoginBlockingStub(io.grpc.Channel channel,
+    private UserServiceBlockingStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected UserLoginBlockingStub build(io.grpc.Channel channel,
+    protected UserServiceBlockingStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new UserLoginBlockingStub(channel, callOptions);
+      return new UserServiceBlockingStub(channel, callOptions);
     }
 
     /**
      * <pre>
-     *Register a new user with username and password &gt; use the Regex to validate 
+     *Register user with username and password &gt; use the Regex to validate||password 8 digits 
      * </pre>
      */
     public generated.grpc.userservice.RegisterResponse registerNewUser(generated.grpc.userservice.RegisterRequest request) {
@@ -241,7 +241,7 @@ public final class UserLoginGrpc {
 
     /**
      * <pre>
-     * Validate the username and password
+     * Login
      * </pre>
      */
     public generated.grpc.userservice.LoginResponse loginUser(generated.grpc.userservice.LoginRequest request) {
@@ -252,28 +252,28 @@ public final class UserLoginGrpc {
 
   /**
    * <pre>
-   * Service to register new users
+   * Service to register new users and login
    * </pre>
    */
-  public static final class UserLoginFutureStub extends io.grpc.stub.AbstractStub<UserLoginFutureStub> {
-    private UserLoginFutureStub(io.grpc.Channel channel) {
+  public static final class UserServiceFutureStub extends io.grpc.stub.AbstractStub<UserServiceFutureStub> {
+    private UserServiceFutureStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private UserLoginFutureStub(io.grpc.Channel channel,
+    private UserServiceFutureStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected UserLoginFutureStub build(io.grpc.Channel channel,
+    protected UserServiceFutureStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new UserLoginFutureStub(channel, callOptions);
+      return new UserServiceFutureStub(channel, callOptions);
     }
 
     /**
      * <pre>
-     *Register a new user with username and password &gt; use the Regex to validate 
+     *Register user with username and password &gt; use the Regex to validate||password 8 digits 
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<generated.grpc.userservice.RegisterResponse> registerNewUser(
@@ -284,7 +284,7 @@ public final class UserLoginGrpc {
 
     /**
      * <pre>
-     * Validate the username and password
+     * Login
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<generated.grpc.userservice.LoginResponse> loginUser(
@@ -302,10 +302,10 @@ public final class UserLoginGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final UserLoginImplBase serviceImpl;
+    private final UserServiceImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(UserLoginImplBase serviceImpl, int methodId) {
+    MethodHandlers(UserServiceImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -338,9 +338,9 @@ public final class UserLoginGrpc {
     }
   }
 
-  private static abstract class UserLoginBaseDescriptorSupplier
+  private static abstract class UserServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
-    UserLoginBaseDescriptorSupplier() {}
+    UserServiceBaseDescriptorSupplier() {}
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
@@ -349,21 +349,21 @@ public final class UserLoginGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
-      return getFileDescriptor().findServiceByName("UserLogin");
+      return getFileDescriptor().findServiceByName("UserService");
     }
   }
 
-  private static final class UserLoginFileDescriptorSupplier
-      extends UserLoginBaseDescriptorSupplier {
-    UserLoginFileDescriptorSupplier() {}
+  private static final class UserServiceFileDescriptorSupplier
+      extends UserServiceBaseDescriptorSupplier {
+    UserServiceFileDescriptorSupplier() {}
   }
 
-  private static final class UserLoginMethodDescriptorSupplier
-      extends UserLoginBaseDescriptorSupplier
+  private static final class UserServiceMethodDescriptorSupplier
+      extends UserServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
     private final String methodName;
 
-    UserLoginMethodDescriptorSupplier(String methodName) {
+    UserServiceMethodDescriptorSupplier(String methodName) {
       this.methodName = methodName;
     }
 
@@ -378,11 +378,11 @@ public final class UserLoginGrpc {
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     io.grpc.ServiceDescriptor result = serviceDescriptor;
     if (result == null) {
-      synchronized (UserLoginGrpc.class) {
+      synchronized (UserServiceGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new UserLoginFileDescriptorSupplier())
+              .setSchemaDescriptor(new UserServiceFileDescriptorSupplier())
               .addMethod(getRegisterNewUserMethod())
               .addMethod(getLoginUserMethod())
               .build();

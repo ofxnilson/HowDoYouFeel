@@ -72,21 +72,22 @@ public final class SentimentServiceImpl {
       "sponse\022\017\n\007message\030\001 \001(\t\"&\n\023WeeklyReportR" +
       "equest\022\017\n\007user_id\030\001 \001(\t\"E\n\024WeeklyReportR" +
       "esponse\022-\n\007entries\030\001 \003(\0132\034.HowDoYouFeel." +
-      "SentimentEntry\"F\n\016SentimentEntry\022\014\n\004date" +
+      "SentimentEntry\"X\n\016SentimentEntry\022\014\n\004date" +
       "\030\001 \001(\t\022\023\n\013time_of_day\030\002 \001(\t\022\021\n\tsentiment" +
-      "\030\003 \001(\t\"/\n\013ChatRequest\022\017\n\007user_id\030\001 \001(\t\022\017" +
-      "\n\007message\030\002 \001(\t\" \n\014ChatResponse\022\020\n\010respo" +
-      "nse\030\001 \001(\t2\341\002\n\020SentimentService\022S\n\020Analys" +
-      "eSentiment\022\036.HowDoYouFeel.SentimentReque" +
-      "st\032\037.HowDoYouFeel.SentimentResponse\022T\n\rS" +
-      "aveSentiment\022\036.HowDoYouFeel.SentimentReq" +
-      "uest\032#.HowDoYouFeel.SaveSentimentRespons" +
-      "e\022X\n\017GetWeeklyReport\022!.HowDoYouFeel.Week" +
-      "lyReportRequest\032\".HowDoYouFeel.WeeklyRep" +
-      "ortResponse\022H\n\013ChatWithBot\022\031.HowDoYouFee" +
-      "l.ChatRequest\032\032.HowDoYouFeel.ChatRespons" +
-      "e(\0010\001B:\n generated.grpc.sentimentanalysi" +
-      "sB\024SentimentServiceImplP\001b\006proto3"
+      "\030\003 \001(\t\022\020\n\010activity\030\004 \001(\t\"/\n\013ChatRequest\022" +
+      "\017\n\007user_id\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\" \n\014Cha" +
+      "tResponse\022\020\n\010response\030\001 \001(\t2\341\002\n\020Sentimen" +
+      "tService\022S\n\020AnalyseSentiment\022\036.HowDoYouF" +
+      "eel.SentimentRequest\032\037.HowDoYouFeel.Sent" +
+      "imentResponse\022T\n\rSaveSentiment\022\036.HowDoYo" +
+      "uFeel.SentimentRequest\032#.HowDoYouFeel.Sa" +
+      "veSentimentResponse\022X\n\017GetWeeklyReport\022!" +
+      ".HowDoYouFeel.WeeklyReportRequest\032\".HowD" +
+      "oYouFeel.WeeklyReportResponse\022H\n\013ChatWit" +
+      "hBot\022\031.HowDoYouFeel.ChatRequest\032\032.HowDoY" +
+      "ouFeel.ChatResponse(\0010\001B:\n generated.grp" +
+      "c.sentimentanalysisB\024SentimentServiceImp" +
+      "lP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -136,7 +137,7 @@ public final class SentimentServiceImpl {
     internal_static_HowDoYouFeel_SentimentEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HowDoYouFeel_SentimentEntry_descriptor,
-        new java.lang.String[] { "Date", "TimeOfDay", "Sentiment", });
+        new java.lang.String[] { "Date", "TimeOfDay", "Sentiment", "Activity", });
     internal_static_HowDoYouFeel_ChatRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_HowDoYouFeel_ChatRequest_fieldAccessorTable = new

@@ -62,6 +62,38 @@ public final class MotivationalMessagesGrpc {
      return getMotivationalMessagesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<generated.grpc.motivationalmessages.GratitudeEntryRequest,
+      generated.grpc.motivationalmessages.GratitudeEntryResponse> getReceiveGratitudeJournalMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReceiveGratitudeJournal",
+      requestType = generated.grpc.motivationalmessages.GratitudeEntryRequest.class,
+      responseType = generated.grpc.motivationalmessages.GratitudeEntryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<generated.grpc.motivationalmessages.GratitudeEntryRequest,
+      generated.grpc.motivationalmessages.GratitudeEntryResponse> getReceiveGratitudeJournalMethod() {
+    io.grpc.MethodDescriptor<generated.grpc.motivationalmessages.GratitudeEntryRequest, generated.grpc.motivationalmessages.GratitudeEntryResponse> getReceiveGratitudeJournalMethod;
+    if ((getReceiveGratitudeJournalMethod = MotivationalMessagesGrpc.getReceiveGratitudeJournalMethod) == null) {
+      synchronized (MotivationalMessagesGrpc.class) {
+        if ((getReceiveGratitudeJournalMethod = MotivationalMessagesGrpc.getReceiveGratitudeJournalMethod) == null) {
+          MotivationalMessagesGrpc.getReceiveGratitudeJournalMethod = getReceiveGratitudeJournalMethod = 
+              io.grpc.MethodDescriptor.<generated.grpc.motivationalmessages.GratitudeEntryRequest, generated.grpc.motivationalmessages.GratitudeEntryResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "HowDoYouFeel.MotivationalMessages", "ReceiveGratitudeJournal"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  generated.grpc.motivationalmessages.GratitudeEntryRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  generated.grpc.motivationalmessages.GratitudeEntryResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new MotivationalMessagesMethodDescriptorSupplier("ReceiveGratitudeJournal"))
+                  .build();
+          }
+        }
+     }
+     return getReceiveGratitudeJournalMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -94,12 +126,22 @@ public final class MotivationalMessagesGrpc {
 
     /**
      * <pre>
-     * Streams motivational messages throughout the day
+     * Server streaming: the user will receive multiple gratitude messages throughout the day
      * </pre>
      */
     public void motivationalMessages(generated.grpc.motivationalmessages.MotivationRequest request,
         io.grpc.stub.StreamObserver<generated.grpc.motivationalmessages.MotivationResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getMotivationalMessagesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Client streaming: user submits multiple gratitude journal entries
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<generated.grpc.motivationalmessages.GratitudeEntryRequest> receiveGratitudeJournal(
+        io.grpc.stub.StreamObserver<generated.grpc.motivationalmessages.GratitudeEntryResponse> responseObserver) {
+      return asyncUnimplementedStreamingCall(getReceiveGratitudeJournalMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -111,6 +153,13 @@ public final class MotivationalMessagesGrpc {
                 generated.grpc.motivationalmessages.MotivationRequest,
                 generated.grpc.motivationalmessages.MotivationResponse>(
                   this, METHODID_MOTIVATIONAL_MESSAGES)))
+          .addMethod(
+            getReceiveGratitudeJournalMethod(),
+            asyncClientStreamingCall(
+              new MethodHandlers<
+                generated.grpc.motivationalmessages.GratitudeEntryRequest,
+                generated.grpc.motivationalmessages.GratitudeEntryResponse>(
+                  this, METHODID_RECEIVE_GRATITUDE_JOURNAL)))
           .build();
     }
   }
@@ -138,13 +187,24 @@ public final class MotivationalMessagesGrpc {
 
     /**
      * <pre>
-     * Streams motivational messages throughout the day
+     * Server streaming: the user will receive multiple gratitude messages throughout the day
      * </pre>
      */
     public void motivationalMessages(generated.grpc.motivationalmessages.MotivationRequest request,
         io.grpc.stub.StreamObserver<generated.grpc.motivationalmessages.MotivationResponse> responseObserver) {
       asyncServerStreamingCall(
           getChannel().newCall(getMotivationalMessagesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Client streaming: user submits multiple gratitude journal entries
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<generated.grpc.motivationalmessages.GratitudeEntryRequest> receiveGratitudeJournal(
+        io.grpc.stub.StreamObserver<generated.grpc.motivationalmessages.GratitudeEntryResponse> responseObserver) {
+      return asyncClientStreamingCall(
+          getChannel().newCall(getReceiveGratitudeJournalMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -171,7 +231,7 @@ public final class MotivationalMessagesGrpc {
 
     /**
      * <pre>
-     * Streams motivational messages throughout the day
+     * Server streaming: the user will receive multiple gratitude messages throughout the day
      * </pre>
      */
     public java.util.Iterator<generated.grpc.motivationalmessages.MotivationResponse> motivationalMessages(
@@ -204,6 +264,7 @@ public final class MotivationalMessagesGrpc {
   }
 
   private static final int METHODID_MOTIVATIONAL_MESSAGES = 0;
+  private static final int METHODID_RECEIVE_GRATITUDE_JOURNAL = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -236,6 +297,9 @@ public final class MotivationalMessagesGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_RECEIVE_GRATITUDE_JOURNAL:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.receiveGratitudeJournal(
+              (io.grpc.stub.StreamObserver<generated.grpc.motivationalmessages.GratitudeEntryResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -288,6 +352,7 @@ public final class MotivationalMessagesGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new MotivationalMessagesFileDescriptorSupplier())
               .addMethod(getMotivationalMessagesMethod())
+              .addMethod(getReceiveGratitudeJournalMethod())
               .build();
         }
       }

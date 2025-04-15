@@ -6,12 +6,14 @@ import generated.grpc.sentimentanalysis.SentimentServiceGrpc.SentimentServiceBlo
 import generated.grpc.sentimentanalysis.SentimentServiceGrpc.SentimentServiceStub;
 import generated.grpc.motivationalmessages.MotivationalMessagesGrpc;
 import generated.grpc.motivationalmessages.MotivationalMessagesGrpc.MotivationalMessagesStub;
+import generated.grpc.userservice.RegisterRequest;
+import generated.grpc.userservice.RegisterResponse;
 import generated.grpc.userservice.UserServiceGrpc;
 import generated.grpc.userservice.UserServiceGrpc.UserServiceBlockingStub;
 
 /*
  * @author Nilson Francisco
- * Main gRPC client class that connects to the server and access the stubs for each service.
+ * Main gRPC client class to connect to the server and access the stubs for each service.
  */
 public class MainClient{
     // gRPC channel to connect to the server
@@ -29,9 +31,7 @@ public class MainClient{
 
     // Constructor to initialize the gRPC channel and stubs for services
     public MainClient(String host, int port){
-        this.channel = ManagedChannelBuilder.forAddress(host, port)
-                .usePlaintext()
-                .build();
+        this.channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
 
         // Initialize stubs for each gRPC service
         this.sentimentAsyncStub = SentimentServiceGrpc.newStub(channel);
@@ -43,5 +43,26 @@ public class MainClient{
     // Shutdown the channel
     public void shutdown(){
         channel.shutdown();
+    }
+    
+    public static void main(String[] args){
+        MainClient client = new MainClient("localhost", 50051);
+            try{
+                // Example: Register a new user to test the connection
+                RegisterRequest request = RegisterRequest.newBuilder()
+                    .setUserName("TestUser")
+                    .setPassword("testpass123")
+                    .setDateOfBirth("2000-01-01")
+                    .build();
+
+                RegisterResponse response = client.userLoginStub.registerNewUser(request);
+                System.out.println("Server replied: " + response.getMessage());
+            } 
+            catch (Exception e){
+                System.err.println("Connection test failed: " + e.getMessage());
+            } 
+            finally{
+                client.shutdown();
+            }
     }
 }

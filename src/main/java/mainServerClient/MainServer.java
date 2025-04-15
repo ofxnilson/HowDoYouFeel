@@ -28,7 +28,7 @@ public class MainServer{
             server.awaitTermination();
         } 
         catch (Exception e){
-            System.err.println("Server error: " + e.getMessage());
+            System.err.println("Error: This port is been used: " + e.getMessage());
         }
     }
 }

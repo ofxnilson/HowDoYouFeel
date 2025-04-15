@@ -44,10 +44,10 @@ public final class MotivationalMessagesImpl {
   static {
     java.lang.String[] descriptorData = {
       "\n\032MotivationalMessages.proto\022\014HowDoYouFe" +
-      "el\"$\n\021MotivationRequest\022\017\n\007user_id\030\001 \001(\t" +
+      "el\"$\n\021MotivationRequest\022\017\n\007user_id\030\001 \001(\005" +
       "\"%\n\022MotivationResponse\022\017\n\007message\030\001 \001(\t\"" +
       "S\n\025GratitudeEntryRequest\022\017\n\007user_id\030\001 \001(" +
-      "\t\022\026\n\016gratitude_text\030\002 \001(\t\022\021\n\ttimestamp\030\003" +
+      "\005\022\026\n\016gratitude_text\030\002 \001(\t\022\021\n\ttimestamp\030\003" +
       " \001(\t\")\n\026GratitudeEntryResponse\022\017\n\007messag" +
       "e\030\001 \001(\t2\333\001\n\024MotivationalMessages\022[\n\024Moti" +
       "vationalMessages\022\037.HowDoYouFeel.Motivati" +

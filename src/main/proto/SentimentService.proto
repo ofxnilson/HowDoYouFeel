@@ -3,28 +3,29 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "generated.grpc.sentimentanalysis";
 option java_outer_classname = "SentimentServiceImpl";
-import "google/protobuf/timestamp.proto";
+
 
 package HowDoYouFeel;
+import "google/protobuf/timestamp.proto";
 
     // Service definition for analyzing user sentiment and provide chatbot
 service SentimentService{
-        // Analyzes the sentiment on the typed text
-    rpc AnalyseSentiment (SentimentRequest) returns (SentimentResponse);
-        // Saves the sentiment input for tracking to the week report
-    rpc SaveSentiment (SentimentRequest) returns (SaveSentimentResponse); 
+        // Analyses the sentiment on the typed text and save it
+    rpc AnalyseSaveSentiment (SentimentRequest) returns (SentimentResponse);
+
         // Return the weekly sentiment report
     rpc GetWeeklyReport (WeeklyReportRequest) returns (WeeklyReportResponse); 
+
         // Bi-directional streaming for chatbot interaction that will simulate a human
     rpc ChatWithBot (stream ChatRequest) returns (stream ChatResponse); 
 }
 
     // Message for requesting sentiment analysis
 message SentimentRequest{
-    string user_id = 1; // Associate the sentiment to an user ID
+    int32 user_id = 1; // Associate the sentiment to an user ID
     string text = 2; // The text input from the user
     string time_of_day = 3; // The time of day when the sentiment was recorded (Morning, Afternoon, Night)
-    string activity = 4; // To get wat happened to the uer that changed his mood
+    string activity = 4; // To get wat happened to the user that changed his mood
 }
 
     // Message for returning sentiment analysis results
@@ -40,7 +41,7 @@ message SaveSentimentResponse{
 
     // Message for requesting the weekly sentiment report based on user ID
 message WeeklyReportRequest{
-    string user_id = 1; 
+    int32 user_id = 1; 
 }
 
     // Message for returning the weekly sentiment report
@@ -58,7 +59,7 @@ message SentimentEntry{
 
     // Message for sending user input to the chatbot
 message ChatRequest{
-    string user_id = 1; // ID to identify the user
+    int32 user_id = 1; // ID to identify the user
     string message = 2; // User's message to the chatbot
 }
 

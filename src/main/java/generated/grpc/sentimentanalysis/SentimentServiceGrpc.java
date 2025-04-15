@@ -31,67 +31,35 @@ public final class SentimentServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<generated.grpc.sentimentanalysis.SentimentRequest,
-      generated.grpc.sentimentanalysis.SentimentResponse> getAnalyseSentimentMethod;
+      generated.grpc.sentimentanalysis.SentimentResponse> getAnalyseSaveSentimentMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "AnalyseSentiment",
+      fullMethodName = SERVICE_NAME + '/' + "AnalyseSaveSentiment",
       requestType = generated.grpc.sentimentanalysis.SentimentRequest.class,
       responseType = generated.grpc.sentimentanalysis.SentimentResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<generated.grpc.sentimentanalysis.SentimentRequest,
-      generated.grpc.sentimentanalysis.SentimentResponse> getAnalyseSentimentMethod() {
-    io.grpc.MethodDescriptor<generated.grpc.sentimentanalysis.SentimentRequest, generated.grpc.sentimentanalysis.SentimentResponse> getAnalyseSentimentMethod;
-    if ((getAnalyseSentimentMethod = SentimentServiceGrpc.getAnalyseSentimentMethod) == null) {
+      generated.grpc.sentimentanalysis.SentimentResponse> getAnalyseSaveSentimentMethod() {
+    io.grpc.MethodDescriptor<generated.grpc.sentimentanalysis.SentimentRequest, generated.grpc.sentimentanalysis.SentimentResponse> getAnalyseSaveSentimentMethod;
+    if ((getAnalyseSaveSentimentMethod = SentimentServiceGrpc.getAnalyseSaveSentimentMethod) == null) {
       synchronized (SentimentServiceGrpc.class) {
-        if ((getAnalyseSentimentMethod = SentimentServiceGrpc.getAnalyseSentimentMethod) == null) {
-          SentimentServiceGrpc.getAnalyseSentimentMethod = getAnalyseSentimentMethod = 
+        if ((getAnalyseSaveSentimentMethod = SentimentServiceGrpc.getAnalyseSaveSentimentMethod) == null) {
+          SentimentServiceGrpc.getAnalyseSaveSentimentMethod = getAnalyseSaveSentimentMethod = 
               io.grpc.MethodDescriptor.<generated.grpc.sentimentanalysis.SentimentRequest, generated.grpc.sentimentanalysis.SentimentResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "HowDoYouFeel.SentimentService", "AnalyseSentiment"))
+                  "HowDoYouFeel.SentimentService", "AnalyseSaveSentiment"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   generated.grpc.sentimentanalysis.SentimentRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   generated.grpc.sentimentanalysis.SentimentResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new SentimentServiceMethodDescriptorSupplier("AnalyseSentiment"))
+                  .setSchemaDescriptor(new SentimentServiceMethodDescriptorSupplier("AnalyseSaveSentiment"))
                   .build();
           }
         }
      }
-     return getAnalyseSentimentMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<generated.grpc.sentimentanalysis.SentimentRequest,
-      generated.grpc.sentimentanalysis.SaveSentimentResponse> getSaveSentimentMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "SaveSentiment",
-      requestType = generated.grpc.sentimentanalysis.SentimentRequest.class,
-      responseType = generated.grpc.sentimentanalysis.SaveSentimentResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<generated.grpc.sentimentanalysis.SentimentRequest,
-      generated.grpc.sentimentanalysis.SaveSentimentResponse> getSaveSentimentMethod() {
-    io.grpc.MethodDescriptor<generated.grpc.sentimentanalysis.SentimentRequest, generated.grpc.sentimentanalysis.SaveSentimentResponse> getSaveSentimentMethod;
-    if ((getSaveSentimentMethod = SentimentServiceGrpc.getSaveSentimentMethod) == null) {
-      synchronized (SentimentServiceGrpc.class) {
-        if ((getSaveSentimentMethod = SentimentServiceGrpc.getSaveSentimentMethod) == null) {
-          SentimentServiceGrpc.getSaveSentimentMethod = getSaveSentimentMethod = 
-              io.grpc.MethodDescriptor.<generated.grpc.sentimentanalysis.SentimentRequest, generated.grpc.sentimentanalysis.SaveSentimentResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "HowDoYouFeel.SentimentService", "SaveSentiment"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  generated.grpc.sentimentanalysis.SentimentRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  generated.grpc.sentimentanalysis.SaveSentimentResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new SentimentServiceMethodDescriptorSupplier("SaveSentiment"))
-                  .build();
-          }
-        }
-     }
-     return getSaveSentimentMethod;
+     return getAnalyseSaveSentimentMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<generated.grpc.sentimentanalysis.WeeklyReportRequest,
@@ -190,22 +158,12 @@ public final class SentimentServiceGrpc {
 
     /**
      * <pre>
-     * Analyzes the sentiment on the typed text
+     * Analyses the sentiment on the typed text and save it
      * </pre>
      */
-    public void analyseSentiment(generated.grpc.sentimentanalysis.SentimentRequest request,
+    public void analyseSaveSentiment(generated.grpc.sentimentanalysis.SentimentRequest request,
         io.grpc.stub.StreamObserver<generated.grpc.sentimentanalysis.SentimentResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getAnalyseSentimentMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Saves the sentiment input for tracking to the week report
-     * </pre>
-     */
-    public void saveSentiment(generated.grpc.sentimentanalysis.SentimentRequest request,
-        io.grpc.stub.StreamObserver<generated.grpc.sentimentanalysis.SaveSentimentResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getSaveSentimentMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getAnalyseSaveSentimentMethod(), responseObserver);
     }
 
     /**
@@ -231,19 +189,12 @@ public final class SentimentServiceGrpc {
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getAnalyseSentimentMethod(),
+            getAnalyseSaveSentimentMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 generated.grpc.sentimentanalysis.SentimentRequest,
                 generated.grpc.sentimentanalysis.SentimentResponse>(
-                  this, METHODID_ANALYSE_SENTIMENT)))
-          .addMethod(
-            getSaveSentimentMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                generated.grpc.sentimentanalysis.SentimentRequest,
-                generated.grpc.sentimentanalysis.SaveSentimentResponse>(
-                  this, METHODID_SAVE_SENTIMENT)))
+                  this, METHODID_ANALYSE_SAVE_SENTIMENT)))
           .addMethod(
             getGetWeeklyReportMethod(),
             asyncUnaryCall(
@@ -285,24 +236,13 @@ public final class SentimentServiceGrpc {
 
     /**
      * <pre>
-     * Analyzes the sentiment on the typed text
+     * Analyses the sentiment on the typed text and save it
      * </pre>
      */
-    public void analyseSentiment(generated.grpc.sentimentanalysis.SentimentRequest request,
+    public void analyseSaveSentiment(generated.grpc.sentimentanalysis.SentimentRequest request,
         io.grpc.stub.StreamObserver<generated.grpc.sentimentanalysis.SentimentResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getAnalyseSentimentMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Saves the sentiment input for tracking to the week report
-     * </pre>
-     */
-    public void saveSentiment(generated.grpc.sentimentanalysis.SentimentRequest request,
-        io.grpc.stub.StreamObserver<generated.grpc.sentimentanalysis.SaveSentimentResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getSaveSentimentMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getAnalyseSaveSentimentMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -351,22 +291,12 @@ public final class SentimentServiceGrpc {
 
     /**
      * <pre>
-     * Analyzes the sentiment on the typed text
+     * Analyses the sentiment on the typed text and save it
      * </pre>
      */
-    public generated.grpc.sentimentanalysis.SentimentResponse analyseSentiment(generated.grpc.sentimentanalysis.SentimentRequest request) {
+    public generated.grpc.sentimentanalysis.SentimentResponse analyseSaveSentiment(generated.grpc.sentimentanalysis.SentimentRequest request) {
       return blockingUnaryCall(
-          getChannel(), getAnalyseSentimentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Saves the sentiment input for tracking to the week report
-     * </pre>
-     */
-    public generated.grpc.sentimentanalysis.SaveSentimentResponse saveSentiment(generated.grpc.sentimentanalysis.SentimentRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getSaveSentimentMethod(), getCallOptions(), request);
+          getChannel(), getAnalyseSaveSentimentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -403,24 +333,13 @@ public final class SentimentServiceGrpc {
 
     /**
      * <pre>
-     * Analyzes the sentiment on the typed text
+     * Analyses the sentiment on the typed text and save it
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<generated.grpc.sentimentanalysis.SentimentResponse> analyseSentiment(
+    public com.google.common.util.concurrent.ListenableFuture<generated.grpc.sentimentanalysis.SentimentResponse> analyseSaveSentiment(
         generated.grpc.sentimentanalysis.SentimentRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getAnalyseSentimentMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Saves the sentiment input for tracking to the week report
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<generated.grpc.sentimentanalysis.SaveSentimentResponse> saveSentiment(
-        generated.grpc.sentimentanalysis.SentimentRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getSaveSentimentMethod(), getCallOptions()), request);
+          getChannel().newCall(getAnalyseSaveSentimentMethod(), getCallOptions()), request);
     }
 
     /**
@@ -435,10 +354,9 @@ public final class SentimentServiceGrpc {
     }
   }
 
-  private static final int METHODID_ANALYSE_SENTIMENT = 0;
-  private static final int METHODID_SAVE_SENTIMENT = 1;
-  private static final int METHODID_GET_WEEKLY_REPORT = 2;
-  private static final int METHODID_CHAT_WITH_BOT = 3;
+  private static final int METHODID_ANALYSE_SAVE_SENTIMENT = 0;
+  private static final int METHODID_GET_WEEKLY_REPORT = 1;
+  private static final int METHODID_CHAT_WITH_BOT = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -457,13 +375,9 @@ public final class SentimentServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_ANALYSE_SENTIMENT:
-          serviceImpl.analyseSentiment((generated.grpc.sentimentanalysis.SentimentRequest) request,
+        case METHODID_ANALYSE_SAVE_SENTIMENT:
+          serviceImpl.analyseSaveSentiment((generated.grpc.sentimentanalysis.SentimentRequest) request,
               (io.grpc.stub.StreamObserver<generated.grpc.sentimentanalysis.SentimentResponse>) responseObserver);
-          break;
-        case METHODID_SAVE_SENTIMENT:
-          serviceImpl.saveSentiment((generated.grpc.sentimentanalysis.SentimentRequest) request,
-              (io.grpc.stub.StreamObserver<generated.grpc.sentimentanalysis.SaveSentimentResponse>) responseObserver);
           break;
         case METHODID_GET_WEEKLY_REPORT:
           serviceImpl.getWeeklyReport((generated.grpc.sentimentanalysis.WeeklyReportRequest) request,
@@ -533,8 +447,7 @@ public final class SentimentServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new SentimentServiceFileDescriptorSupplier())
-              .addMethod(getAnalyseSentimentMethod())
-              .addMethod(getSaveSentimentMethod())
+              .addMethod(getAnalyseSaveSentimentMethod())
               .addMethod(getGetWeeklyReportMethod())
               .addMethod(getChatWithBotMethod())
               .build();

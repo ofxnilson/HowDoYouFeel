@@ -46,16 +46,17 @@ public final class UserServiceImpl {
       "\n\021UserService.proto\022\014HowDoYouFeel\"e\n\017Reg" +
       "isterRequest\022\021\n\tuser_name\030\001 \001(\t\022\020\n\010passw" +
       "ord\030\002 \001(\t\022\025\n\rdate_of_birth\030\003 \001(\t\022\026\n\016ther" +
-      "apist_name\030\004 \001(\t\"4\n\020RegisterResponse\022\017\n\007" +
-      "user_id\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\"1\n\014LoginR" +
-      "equest\022\017\n\007user_id\030\001 \001(\t\022\020\n\010password\030\002 \001(" +
-      "\t\"1\n\rLoginResponse\022\017\n\007user_id\030\001 \001(\t\022\017\n\007m" +
-      "essage\030\002 \001(\t2\245\001\n\013UserService\022P\n\017Register" +
-      "NewUser\022\035.HowDoYouFeel.RegisterRequest\032\036" +
-      ".HowDoYouFeel.RegisterResponse\022D\n\tLoginU" +
-      "ser\022\032.HowDoYouFeel.LoginRequest\032\033.HowDoY" +
-      "ouFeel.LoginResponseB/\n\032generated.grpc.u" +
-      "serserviceB\017UserServiceImplP\001b\006proto3"
+      "apist_name\030\004 \001(\t\"E\n\020RegisterResponse\022\017\n\007" +
+      "success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\022\017\n\007user_i" +
+      "d\030\003 \001(\005\"1\n\014LoginRequest\022\017\n\007user_id\030\001 \001(\005" +
+      "\022\020\n\010password\030\002 \001(\t\"B\n\rLoginResponse\022\017\n\007u" +
+      "ser_id\030\001 \001(\005\022\017\n\007message\030\002 \001(\t\022\017\n\007success" +
+      "\030\003 \001(\0102\245\001\n\013UserService\022P\n\017RegisterNewUse" +
+      "r\022\035.HowDoYouFeel.RegisterRequest\032\036.HowDo" +
+      "YouFeel.RegisterResponse\022D\n\tLoginUser\022\032." +
+      "HowDoYouFeel.LoginRequest\032\033.HowDoYouFeel" +
+      ".LoginResponseB/\n\032generated.grpc.userser" +
+      "viceB\017UserServiceImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -80,7 +81,7 @@ public final class UserServiceImpl {
     internal_static_HowDoYouFeel_RegisterResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HowDoYouFeel_RegisterResponse_descriptor,
-        new java.lang.String[] { "UserId", "Message", });
+        new java.lang.String[] { "Success", "Message", "UserId", });
     internal_static_HowDoYouFeel_LoginRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_HowDoYouFeel_LoginRequest_fieldAccessorTable = new
@@ -92,7 +93,7 @@ public final class UserServiceImpl {
     internal_static_HowDoYouFeel_LoginResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HowDoYouFeel_LoginResponse_descriptor,
-        new java.lang.String[] { "UserId", "Message", });
+        new java.lang.String[] { "UserId", "Message", "Success", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

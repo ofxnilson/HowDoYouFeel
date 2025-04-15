@@ -12,18 +12,9 @@ public interface LoginRequestOrBuilder extends
    * User login with ID
    * </pre>
    *
-   * <code>string user_id = 1;</code>
+   * <code>int32 user_id = 1;</code>
    */
-  java.lang.String getUserId();
-  /**
-   * <pre>
-   * User login with ID
-   * </pre>
-   *
-   * <code>string user_id = 1;</code>
-   */
-  com.google.protobuf.ByteString
-      getUserIdBytes();
+  int getUserId();
 
   /**
    * <pre>

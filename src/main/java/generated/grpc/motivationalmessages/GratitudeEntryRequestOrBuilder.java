@@ -12,18 +12,9 @@ public interface GratitudeEntryRequestOrBuilder extends
    * The user submitting the gratitude entry
    * </pre>
    *
-   * <code>string user_id = 1;</code>
+   * <code>int32 user_id = 1;</code>
    */
-  java.lang.String getUserId();
-  /**
-   * <pre>
-   * The user submitting the gratitude entry
-   * </pre>
-   *
-   * <code>string user_id = 1;</code>
-   */
-  com.google.protobuf.ByteString
-      getUserIdBytes();
+  int getUserId();
 
   /**
    * <pre>

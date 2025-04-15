@@ -12,18 +12,9 @@ public interface SentimentRequestOrBuilder extends
    * Associate the sentiment to an user ID
    * </pre>
    *
-   * <code>string user_id = 1;</code>
+   * <code>int32 user_id = 1;</code>
    */
-  java.lang.String getUserId();
-  /**
-   * <pre>
-   * Associate the sentiment to an user ID
-   * </pre>
-   *
-   * <code>string user_id = 1;</code>
-   */
-  com.google.protobuf.ByteString
-      getUserIdBytes();
+  int getUserId();
 
   /**
    * <pre>
@@ -63,7 +54,7 @@ public interface SentimentRequestOrBuilder extends
 
   /**
    * <pre>
-   * To get wat happened to the uer that changed his mood
+   * To get wat happened to the user that changed his mood
    * </pre>
    *
    * <code>string activity = 4;</code>
@@ -71,7 +62,7 @@ public interface SentimentRequestOrBuilder extends
   java.lang.String getActivity();
   /**
    * <pre>
-   * To get wat happened to the uer that changed his mood
+   * To get wat happened to the user that changed his mood
    * </pre>
    *
    * <code>string activity = 4;</code>

@@ -8,12 +8,7 @@ public interface WeeklyReportRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string user_id = 1;</code>
+   * <code>int32 user_id = 1;</code>
    */
-  java.lang.String getUserId();
-  /**
-   * <code>string user_id = 1;</code>
-   */
-  com.google.protobuf.ByteString
-      getUserIdBytes();
+  int getUserId();
 }

@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private SentimentRequest() {
-    userId_ = "";
+    userId_ = 0;
     text_ = "";
     timeOfDay_ = "";
     activity_ = "";
@@ -50,10 +50,9 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 8: {
 
-            userId_ = s;
+            userId_ = input.readInt32();
             break;
           }
           case 18: {
@@ -107,45 +106,16 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int USER_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object userId_;
+  private int userId_;
   /**
    * <pre>
    * Associate the sentiment to an user ID
    * </pre>
    *
-   * <code>string user_id = 1;</code>
+   * <code>int32 user_id = 1;</code>
    */
-  public java.lang.String getUserId() {
-    java.lang.Object ref = userId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      userId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Associate the sentiment to an user ID
-   * </pre>
-   *
-   * <code>string user_id = 1;</code>
-   */
-  public com.google.protobuf.ByteString
-      getUserIdBytes() {
-    java.lang.Object ref = userId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      userId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public int getUserId() {
+    return userId_;
   }
 
   public static final int TEXT_FIELD_NUMBER = 2;
@@ -236,7 +206,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object activity_;
   /**
    * <pre>
-   * To get wat happened to the uer that changed his mood
+   * To get wat happened to the user that changed his mood
    * </pre>
    *
    * <code>string activity = 4;</code>
@@ -255,7 +225,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * To get wat happened to the uer that changed his mood
+   * To get wat happened to the user that changed his mood
    * </pre>
    *
    * <code>string activity = 4;</code>
@@ -288,8 +258,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getUserIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
+    if (userId_ != 0) {
+      output.writeInt32(1, userId_);
     }
     if (!getTextBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, text_);
@@ -309,8 +279,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getUserIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
+    if (userId_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(1, userId_);
     }
     if (!getTextBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, text_);
@@ -337,8 +308,8 @@ private static final long serialVersionUID = 0L;
     generated.grpc.sentimentanalysis.SentimentRequest other = (generated.grpc.sentimentanalysis.SentimentRequest) obj;
 
     boolean result = true;
-    result = result && getUserId()
-        .equals(other.getUserId());
+    result = result && (getUserId()
+        == other.getUserId());
     result = result && getText()
         .equals(other.getText());
     result = result && getTimeOfDay()
@@ -357,7 +328,7 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getUserId().hashCode();
+    hash = (53 * hash) + getUserId();
     hash = (37 * hash) + TEXT_FIELD_NUMBER;
     hash = (53 * hash) + getText().hashCode();
     hash = (37 * hash) + TIME_OF_DAY_FIELD_NUMBER;
@@ -501,7 +472,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      userId_ = "";
+      userId_ = 0;
 
       text_ = "";
 
@@ -587,9 +558,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(generated.grpc.sentimentanalysis.SentimentRequest other) {
       if (other == generated.grpc.sentimentanalysis.SentimentRequest.getDefaultInstance()) return this;
-      if (!other.getUserId().isEmpty()) {
-        userId_ = other.userId_;
-        onChanged();
+      if (other.getUserId() != 0) {
+        setUserId(other.getUserId());
       }
       if (!other.getText().isEmpty()) {
         text_ = other.text_;
@@ -632,59 +602,26 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object userId_ = "";
+    private int userId_ ;
     /**
      * <pre>
      * Associate the sentiment to an user ID
      * </pre>
      *
-     * <code>string user_id = 1;</code>
+     * <code>int32 user_id = 1;</code>
      */
-    public java.lang.String getUserId() {
-      java.lang.Object ref = userId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        userId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    public int getUserId() {
+      return userId_;
     }
     /**
      * <pre>
      * Associate the sentiment to an user ID
      * </pre>
      *
-     * <code>string user_id = 1;</code>
+     * <code>int32 user_id = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getUserIdBytes() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        userId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Associate the sentiment to an user ID
-     * </pre>
-     *
-     * <code>string user_id = 1;</code>
-     */
-    public Builder setUserId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+    public Builder setUserId(int value) {
+      
       userId_ = value;
       onChanged();
       return this;
@@ -694,29 +631,11 @@ private static final long serialVersionUID = 0L;
      * Associate the sentiment to an user ID
      * </pre>
      *
-     * <code>string user_id = 1;</code>
+     * <code>int32 user_id = 1;</code>
      */
     public Builder clearUserId() {
       
-      userId_ = getDefaultInstance().getUserId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Associate the sentiment to an user ID
-     * </pre>
-     *
-     * <code>string user_id = 1;</code>
-     */
-    public Builder setUserIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      userId_ = value;
+      userId_ = 0;
       onChanged();
       return this;
     }
@@ -902,7 +821,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object activity_ = "";
     /**
      * <pre>
-     * To get wat happened to the uer that changed his mood
+     * To get wat happened to the user that changed his mood
      * </pre>
      *
      * <code>string activity = 4;</code>
@@ -921,7 +840,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * To get wat happened to the uer that changed his mood
+     * To get wat happened to the user that changed his mood
      * </pre>
      *
      * <code>string activity = 4;</code>
@@ -941,7 +860,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * To get wat happened to the uer that changed his mood
+     * To get wat happened to the user that changed his mood
      * </pre>
      *
      * <code>string activity = 4;</code>
@@ -958,7 +877,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * To get wat happened to the uer that changed his mood
+     * To get wat happened to the user that changed his mood
      * </pre>
      *
      * <code>string activity = 4;</code>
@@ -971,7 +890,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * To get wat happened to the uer that changed his mood
+     * To get wat happened to the user that changed his mood
      * </pre>
      *
      * <code>string activity = 4;</code>

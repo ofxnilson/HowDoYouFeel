@@ -136,7 +136,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Login
+     * User login and validation
      * </pre>
      */
     public void loginUser(generated.grpc.userservice.LoginRequest request,
@@ -198,7 +198,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Login
+     * User login and validation
      * </pre>
      */
     public void loginUser(generated.grpc.userservice.LoginRequest request,
@@ -241,7 +241,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Login
+     * User login and validation
      * </pre>
      */
     public generated.grpc.userservice.LoginResponse loginUser(generated.grpc.userservice.LoginRequest request) {
@@ -284,7 +284,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Login
+     * User login and validation
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<generated.grpc.userservice.LoginResponse> loginUser(

@@ -12,18 +12,9 @@ public interface LoginResponseOrBuilder extends
    * The user ID is shown if login successful 
    * </pre>
    *
-   * <code>string user_id = 1;</code>
+   * <code>int32 user_id = 1;</code>
    */
-  java.lang.String getUserId();
-  /**
-   * <pre>
-   * The user ID is shown if login successful 
-   * </pre>
-   *
-   * <code>string user_id = 1;</code>
-   */
-  com.google.protobuf.ByteString
-      getUserIdBytes();
+  int getUserId();
 
   /**
    * <pre>
@@ -42,4 +33,9 @@ public interface LoginResponseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getMessageBytes();
+
+  /**
+   * <code>bool success = 3;</code>
+   */
+  boolean getSuccess();
 }

@@ -10,8 +10,8 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 
 public class SentimentServiceImpl extends SentimentServiceGrpc.SentimentServiceImplBase{
-    // Hashmap to store the sentiments accordingly with the user ID
-    private final Map<String, List<SentimentEntry>> sentimentDatabase = new ConcurrentHashMap<>();
+    // Hashmap to store the sentiments to a key based on a integer userId
+    private final Map<Integer, List<SentimentEntry>> sentimentDatabase = new ConcurrentHashMap<>();
 
     /*
      * Unary RPC to analyze the user sentiment in the text
@@ -19,8 +19,11 @@ public class SentimentServiceImpl extends SentimentServiceGrpc.SentimentServiceI
      * @param responseObserver
      */
     @Override
-    public void analyseSentiment(SentimentRequest request, StreamObserver<SentimentResponse> responseObserver) {
+    public void analyseSaveSentiment(SentimentRequest request, StreamObserver<SentimentResponse> responseObserver){
         String text = request.getText().toLowerCase(); // Get the user text input
+        int userId = request.getUserId();
+        String activity = request.getActivity();
+        String timeOfDay = request.getTimeOfDay();
         String sentiment;   
         float confidence;   // Value given to the sentiments found in the text
 
@@ -47,55 +50,11 @@ public class SentimentServiceImpl extends SentimentServiceGrpc.SentimentServiceI
                 || text.contains("kill") 
                 || text.contains("lonelly")){
             sentiment = "negative";
-            confidence = 0.90f;
+            confidence = 0.50f;
         } 
         else{
             sentiment = "neutral";
             confidence = 0.70f;
-        }
-
-        // Build and return the response with sentiment and confidence
-        SentimentResponse response = SentimentResponse.newBuilder().setSentiment(sentiment).setConfidence(confidence).build();
-
-        responseObserver.onNext(response);
-        responseObserver.onCompleted();
-    }
-
-    /*
-     * Unary RPC to save the sentiment data into the server memory
-     * Following the sentiment decision logic to classify  
-     */
-    @Override
-    public void saveSentiment(SentimentRequest request, StreamObserver<SaveSentimentResponse> responseObserver){
-        String userId = request.getUserId(); // Get user ID
-        String activity = request.getActivity(); // Get the activity/situation that changed the user mood 
-        String sentiment;
-
-        if (request.getText().toLowerCase().contains("happy") 
-           || request.getText().toLowerCase().contains("great")
-           || request.getText().toLowerCase().contains("love") 
-           || request.getText().toLowerCase().contains("enjoy") 
-           || request.getText().toLowerCase().contains("appreciate") 
-           || request.getText().toLowerCase().contains("gratefull") 
-           || request.getText().toLowerCase().contains("delighted") 
-           || request.getText().toLowerCase().contains("stunning")){
-            sentiment = "positive";
-        } 
-        else if (request.getText().toLowerCase().contains("sad") 
-           || request.getText().toLowerCase().contains("depressed")
-           || request.getText().toLowerCase().contains("angry") 
-           || request.getText().toLowerCase().contains("hate") 
-           || request.getText().toLowerCase().contains("disapointed") 
-           || request.getText().toLowerCase().contains("solitude") 
-           || request.getText().toLowerCase().contains("death")
-           || request.getText().toLowerCase().contains("sick") 
-           || request.getText().toLowerCase().contains("stressed")
-           || request.getText().toLowerCase().contains("kill")
-           || request.getText().toLowerCase().contains("lonelly")){
-            sentiment = "negative";
-        } 
-           else {
-            sentiment = "neutral";
         }
 
         // Create a new sentiment entry with the current date and time that is stored and what happened to change the user mood
@@ -105,8 +64,8 @@ public class SentimentServiceImpl extends SentimentServiceGrpc.SentimentServiceI
         sentimentDatabase.putIfAbsent(userId, new ArrayList<>());
         sentimentDatabase.get(userId).add(entry);
 
-        // Respond with a confirmation message
-        SaveSentimentResponse response = SaveSentimentResponse.newBuilder().setMessage("Sentiment saved successfully.").build();
+        // Build and return the response
+        SentimentResponse response = SentimentResponse.newBuilder().setSentiment(sentiment).setConfidence(confidence).build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
@@ -116,7 +75,7 @@ public class SentimentServiceImpl extends SentimentServiceGrpc.SentimentServiceI
      */
     @Override
     public void getWeeklyReport(WeeklyReportRequest request, StreamObserver<WeeklyReportResponse> responseObserver){
-        String userId = request.getUserId();
+        int userId = request.getUserId();
 
         // Return the sentiment entries for the user
         List<SentimentEntry> entries = sentimentDatabase.getOrDefault(userId, new ArrayList<>());
@@ -134,7 +93,7 @@ public class SentimentServiceImpl extends SentimentServiceGrpc.SentimentServiceI
      * Bidirectional streaming RPC that simulates a chatbot
      */
     @Override
-    public StreamObserver<ChatRequest> chatWithBot(StreamObserver<ChatResponse> responseObserver) {
+    public StreamObserver<ChatRequest> chatWithBot(StreamObserver<ChatResponse> responseObserver){
         return new StreamObserver<ChatRequest>(){
 
             // Called every time the client sends a message.

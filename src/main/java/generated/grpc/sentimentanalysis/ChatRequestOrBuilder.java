@@ -12,18 +12,9 @@ public interface ChatRequestOrBuilder extends
    * ID to identify the user
    * </pre>
    *
-   * <code>string user_id = 1;</code>
+   * <code>int32 user_id = 1;</code>
    */
-  java.lang.String getUserId();
-  /**
-   * <pre>
-   * ID to identify the user
-   * </pre>
-   *
-   * <code>string user_id = 1;</code>
-   */
-  com.google.protobuf.ByteString
-      getUserIdBytes();
+  int getUserId();
 
   /**
    * <pre>

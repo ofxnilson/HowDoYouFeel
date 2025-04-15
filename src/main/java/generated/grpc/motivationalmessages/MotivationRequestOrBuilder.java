@@ -12,16 +12,7 @@ public interface MotivationRequestOrBuilder extends
    * Uses the user ID to return the messages to the correct user
    * </pre>
    *
-   * <code>string user_id = 1;</code>
+   * <code>int32 user_id = 1;</code>
    */
-  java.lang.String getUserId();
-  /**
-   * <pre>
-   * Uses the user ID to return the messages to the correct user
-   * </pre>
-   *
-   * <code>string user_id = 1;</code>
-   */
-  com.google.protobuf.ByteString
-      getUserIdBytes();
+  int getUserId();
 }

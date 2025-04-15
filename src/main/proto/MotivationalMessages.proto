@@ -17,7 +17,7 @@ service MotivationalMessages{
 
 // Message for requesting motivational messages based on user ID
 message MotivationRequest{
-    string user_id = 1; // Uses the user ID to return the messages to the correct user
+    int32 user_id = 1; // Uses the user ID to return the messages to the correct user
 }
 
 // Message for streaming motivational messages
@@ -27,7 +27,7 @@ message MotivationResponse{
 
 // Users submit multiple gratitude journal entries
 message GratitudeEntryRequest{
-    string user_id = 1;  // The user submitting the gratitude entry
+    int32 user_id = 1;  // The user submitting the gratitude entry
     string gratitude_text = 2; // What the user is grateful for
     string timestamp = 3; // Time when of the entry
 }

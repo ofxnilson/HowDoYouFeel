@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class MotivationalServiceImpl extends MotivationalMessagesGrpc.MotivationalMessagesImplBase {
     // Hashmap to store the user entries in the journal
-    private final Map<String, List<String>> gratitudeJournal = new ConcurrentHashMap<>();
+    private final Map<Integer, List<String>> gratitudeJournal = new ConcurrentHashMap<>();
 
     // List of boost mood messages to send to the user
     private final List<String> motivationalMessages = List.of(
@@ -46,7 +46,7 @@ public class MotivationalServiceImpl extends MotivationalMessagesGrpc.Motivation
      */
     @Override
     public void motivationalMessages(MotivationRequest request, StreamObserver<MotivationResponse> responseObserver){
-        String userId = request.getUserId();
+        int userId = request.getUserId();
 
         System.out.println("Sending motivational messages to user: " + userId);
 
@@ -59,7 +59,7 @@ public class MotivationalServiceImpl extends MotivationalMessagesGrpc.Motivation
 
             // Delay to simulate real-time message sending - in real world use it would be each hour or two
             try{
-                Thread.sleep(500);  
+                Thread.sleep(2000);  
             } 
             catch (InterruptedException e){
                 Thread.currentThread().interrupt();
@@ -78,11 +78,11 @@ public class MotivationalServiceImpl extends MotivationalMessagesGrpc.Motivation
     @Override
     public StreamObserver<GratitudeEntryRequest> receiveGratitudeJournal(StreamObserver<GratitudeEntryResponse> responseObserver){
         return new StreamObserver<GratitudeEntryRequest>(){
-            private final Map<String, List<String>> entriesBuffer = new HashMap<>(); // Buffer to hold the user entries
+            private final Map<Integer, List<String>> entriesBuffer = new HashMap<>(); // Buffer to hold the user entries
 
             @Override
             public void onNext(GratitudeEntryRequest request){
-                String userId = request.getUserId();
+                int userId = request.getUserId();
                 String entry = "[" + request.getTimestamp() + "] " + request.getGratitudeText();
 
                 // Store in buffer
@@ -100,8 +100,8 @@ public class MotivationalServiceImpl extends MotivationalMessagesGrpc.Motivation
             @Override
             public void onCompleted(){
                 // Move entries from buffer to gratitude journal
-                for (Map.Entry<String, List<String>> userEntries : entriesBuffer.entrySet()){
-                    String userId = userEntries.getKey();
+                for (Map.Entry<Integer, List<String>> userEntries : entriesBuffer.entrySet()){
+                    int userId = userEntries.getKey();
                     gratitudeJournal.putIfAbsent(userId, new ArrayList<>());
                     gratitudeJournal.get(userId).addAll(userEntries.getValue());
                 }

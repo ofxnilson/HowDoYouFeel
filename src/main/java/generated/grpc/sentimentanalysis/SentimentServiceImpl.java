@@ -65,29 +65,27 @@ public final class SentimentServiceImpl {
     java.lang.String[] descriptorData = {
       "\n\026SentimentService.proto\022\014HowDoYouFeel\032\037" +
       "google/protobuf/timestamp.proto\"X\n\020Senti" +
-      "mentRequest\022\017\n\007user_id\030\001 \001(\t\022\014\n\004text\030\002 \001" +
+      "mentRequest\022\017\n\007user_id\030\001 \001(\005\022\014\n\004text\030\002 \001" +
       "(\t\022\023\n\013time_of_day\030\003 \001(\t\022\020\n\010activity\030\004 \001(" +
       "\t\":\n\021SentimentResponse\022\021\n\tsentiment\030\001 \001(" +
       "\t\022\022\n\nconfidence\030\002 \001(\002\"(\n\025SaveSentimentRe" +
       "sponse\022\017\n\007message\030\001 \001(\t\"&\n\023WeeklyReportR" +
-      "equest\022\017\n\007user_id\030\001 \001(\t\"E\n\024WeeklyReportR" +
+      "equest\022\017\n\007user_id\030\001 \001(\005\"E\n\024WeeklyReportR" +
       "esponse\022-\n\007entries\030\001 \003(\0132\034.HowDoYouFeel." +
       "SentimentEntry\"X\n\016SentimentEntry\022\014\n\004date" +
       "\030\001 \001(\t\022\023\n\013time_of_day\030\002 \001(\t\022\021\n\tsentiment" +
       "\030\003 \001(\t\022\020\n\010activity\030\004 \001(\t\"/\n\013ChatRequest\022" +
-      "\017\n\007user_id\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\" \n\014Cha" +
-      "tResponse\022\020\n\010response\030\001 \001(\t2\341\002\n\020Sentimen" +
-      "tService\022S\n\020AnalyseSentiment\022\036.HowDoYouF" +
-      "eel.SentimentRequest\032\037.HowDoYouFeel.Sent" +
-      "imentResponse\022T\n\rSaveSentiment\022\036.HowDoYo" +
-      "uFeel.SentimentRequest\032#.HowDoYouFeel.Sa" +
-      "veSentimentResponse\022X\n\017GetWeeklyReport\022!" +
-      ".HowDoYouFeel.WeeklyReportRequest\032\".HowD" +
-      "oYouFeel.WeeklyReportResponse\022H\n\013ChatWit" +
-      "hBot\022\031.HowDoYouFeel.ChatRequest\032\032.HowDoY" +
-      "ouFeel.ChatResponse(\0010\001B:\n generated.grp" +
-      "c.sentimentanalysisB\024SentimentServiceImp" +
-      "lP\001b\006proto3"
+      "\017\n\007user_id\030\001 \001(\005\022\017\n\007message\030\002 \001(\t\" \n\014Cha" +
+      "tResponse\022\020\n\010response\030\001 \001(\t2\217\002\n\020Sentimen" +
+      "tService\022W\n\024AnalyseSaveSentiment\022\036.HowDo" +
+      "YouFeel.SentimentRequest\032\037.HowDoYouFeel." +
+      "SentimentResponse\022X\n\017GetWeeklyReport\022!.H" +
+      "owDoYouFeel.WeeklyReportRequest\032\".HowDoY" +
+      "ouFeel.WeeklyReportResponse\022H\n\013ChatWithB" +
+      "ot\022\031.HowDoYouFeel.ChatRequest\032\032.HowDoYou" +
+      "Feel.ChatResponse(\0010\001B:\n generated.grpc." +
+      "sentimentanalysisB\024SentimentServiceImplP" +
+      "\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
